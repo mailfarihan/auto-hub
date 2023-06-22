@@ -3,10 +3,10 @@
 import Image from "next/image"
 import CustomButton from "./CustomButton"
 
-const Hero = () => {
+const Hero = ({scrollTo}) => {
 
     const handleScroll = () =>{
-
+        scrollTo()
     }
 
   return (

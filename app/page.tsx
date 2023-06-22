@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Hero, SearchBar, CustomFilter, CarCard, ShowMore } from "@/components";
 import { fetchCars } from "@/utils";
 import { fuels, yearsOfProduction } from "@/constants";
@@ -15,6 +15,8 @@ export default /*async*/ function Home(/*{searchParams}*/) {
   //   limit: searchParams.limit || 10,
   //   model: searchParams.model || '',
   // })
+
+  const ref = useRef(null)
   
   const [allCars, setAllCars] = useState([])
   const [loading, setLoading] = useState(false)
@@ -52,6 +54,9 @@ export default /*async*/ function Home(/*{searchParams}*/) {
     
   }
 
+  const handleScrollClick = () =>{
+    ref.current?.scrollIntoView({behavior: 'smooth'});
+  }
 
   useEffect(() => {
     console.log(fuel, year, limit, manufacturer, model)
@@ -62,9 +67,9 @@ export default /*async*/ function Home(/*{searchParams}*/) {
 
   return (
     <main className="overflow-hidden">
-      <Hero/>
+      <Hero scrollTo={handleScrollClick}/>
 
-      <div className="mt-12 padding-x padding-y max-width" id="discover">
+      <div className="mt-12 padding-x padding-y max-width" id="discover" ref={ref}>
         <div className="home__text-container">
           <h1 className="text-4xl font-extrabold">
             Car Catalogue
