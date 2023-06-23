@@ -9,4 +9,6 @@ This project is created by me to learn server side rendering using Nextjs 13 and
 - Typescript
 - Headless UI
 - Tailwind
+- Rapid API (Cars - API Ninja)
+- imagin.studio
 
