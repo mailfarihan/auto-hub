@@ -1,4 +1,4 @@
-This is my [Next.js](https://nextjs.org/) project on sever side rendering.
+Find, book, rent a car — quikly and easiy! Streamline your car rental experience with out effortless booking process.
 
 ## Background
 
